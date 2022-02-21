@@ -9,8 +9,8 @@ class TestAddGroups(unittest.TestCase):
     def setUp(self):
         self.wd = webdriver.Firefox()
         self.wd.implicitly_wait(30)
-        
-    def open_home_page(self):
+
+    def open_home_page(self, wd):
         wd.get("http://localhost/addressbook/")
 
     def login(self, wd, username, password):
@@ -50,7 +50,7 @@ class TestAddGroups(unittest.TestCase):
 
     def test_add_groups(self):
         wd = self.wd
-        self.open_home_page()
+        self.open_home_page(wd)
         self.login(wd, username="admin", password="secret")
         self.open_add_new(wd)
         self.create_new_contact(wd, Contact(firstname="new contact", middlename="contact", lastname="Test", nikename="Testcontact"))
