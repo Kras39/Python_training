@@ -3,10 +3,10 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
-import unittest
+import unittest, time, re
 from Create_new_contact.contact import Contact
 from Create_new_contact.phones import Phones
-from Create_new_contact.birthday import Birthday
+# from Create_new_contact.birthday import Birthday
 from Create_new_contact.email import Email
 from Create_new_contact.address2 import Address2
 
@@ -16,10 +16,8 @@ class TestAddGroups(unittest.TestCase):
     def setUp(self):
         self.wd = webdriver.Firefox()
         self.wd.implicitly_wait(30)
-
     def open_home_page(self, wd):
         wd.get("http://localhost/addressbook/")
-
     def login(self, wd, username, password):
         wd.find_element_by_name("user").click()
         wd.find_element_by_name("user").clear()
@@ -30,10 +28,9 @@ class TestAddGroups(unittest.TestCase):
         wd.find_element_by_name("pass").send_keys(password)
         wd.find_element_by_id("LoginForm").click()
         wd.find_element_by_xpath("//input[@value='Login']").click()
-
-    def new_contact(self, wd, contact):
-        # open_contact_groups
+    def open_new_contact(self, wd):
         wd.find_element_by_link_text("add new").click()
+    def new_contact(self, wd, contact):
         # create_first_name
         wd.find_element_by_name("firstname").click()
         wd.find_element_by_name("firstname").clear()
@@ -62,7 +59,6 @@ class TestAddGroups(unittest.TestCase):
         wd.find_element_by_name("address").click()
         wd.find_element_by_name("address").clear()
         wd.find_element_by_name("address").send_keys(contact.address)
-
     def cerate_email(self, wd, email):
         # create_email
         wd.find_element_by_name("email").click()
@@ -76,7 +72,6 @@ class TestAddGroups(unittest.TestCase):
         wd.find_element_by_name("email3").click()
         wd.find_element_by_name("email3").clear()
         wd.find_element_by_name("email3").send_keys(email.email3)
-
     def address2(self, wd, address2):
         # create_address2
         wd.find_element_by_name("address2").click()
@@ -91,7 +86,6 @@ class TestAddGroups(unittest.TestCase):
         wd.find_element_by_name("notes").clear()
         wd.find_element_by_name("notes").send_keys(address2.notes)
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
-
     def create_birthday(self, wd, birthday):
         # create_bday
         wd.find_element_by_name("bday").click()
@@ -103,7 +97,6 @@ class TestAddGroups(unittest.TestCase):
         wd.find_element_by_name("byear").click()
         wd.find_element_by_name("byear").clear()
         wd.find_element_by_name("byear").send_keys(birthday.year)
-
     def create_phones(self, wd, phones):
         # create_home_phone
         wd.find_element_by_name("home").click()
@@ -121,18 +114,16 @@ class TestAddGroups(unittest.TestCase):
         wd.find_element_by_name("fax").click()
         wd.find_element_by_name("fax").clear()
         wd.find_element_by_name("fax").send_keys(phones.fax)
-
     def return_to_home_page(self, wd):
         wd.find_element_by_link_text("home page").click()
-
     def logout(self, wd):
         wd.find_element_by_link_text("Logout").click()
-
     def test_add_contact(self):
         wd = self.wd
         self.open_home_page(wd)
         self.login(wd, username="admin", password="secret")
-        self.new_contact(wd, Contact(firstname="Grinch", middlename="Grinch", lastname="Grinch_1", nickname="Grinch_2",company="Wood", address="Wood"))
+        self.open_new_contact(wd)
+        self.new_contact(wd, Contact(firstname="Grinch", middlename="Grinch", lastname="Grinch_1", nickname="Grinch_2",company="Wood", title="GG", address="Wood"))
         self.create_phones(wd, Phones(home="1232323", mobile="2314579", work="7898989", fax="4567896"))
         self.cerate_email(wd, Email(email="grinch@mail.com", email2="grinch_1@mail.com", email3="grinch_3@mail.com"))
         self.address2(wd, Address2(address2="Wood", phone2="333", notes="1"))
