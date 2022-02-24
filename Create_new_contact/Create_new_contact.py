@@ -4,11 +4,11 @@ from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
 import unittest
-from contacts import Contacts
-from telephone import Telephone
-from mailboxes_and_homepage import MailboxesAndHomepage
-from birthday import Birthday
-from secondary_address import SecondaryAddress
+from Create_new_contact.contacts import Contacts
+from Create_new_contact.telephone import Telephone
+from Create_new_contact.mailboxes_and_homepage import MailboxesAndHomepage
+from Create_new_contact.birthday import Birthday
+from Create_new_contact.secondary_address import SecondaryAddress
 
 
 class AddContacts(unittest.TestCase):
