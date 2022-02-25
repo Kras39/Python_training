@@ -8,9 +8,9 @@ from fixture.application import Application
 
 @pytest.fixture
 def app(request):
-    fixure = Application()
-    request.addfinalizer(fixure.destroy)
-    return fixure
+    fixture = Application()
+    request.addfinalizer(fixture.destroy)
+    return fixture
 
 def test_add_groups(app):
     app.session.login(username="admin", password="secret")
