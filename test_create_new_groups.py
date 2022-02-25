@@ -3,7 +3,7 @@ from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
 import unittest
-from Create_group.group import Group
+from group import Group
 
 class TestAddGroups(unittest.TestCase):
     def setUp(self):
@@ -14,6 +14,7 @@ class TestAddGroups(unittest.TestCase):
         wd.get("http://localhost/addressbook/")
 
     def login(self, wd, username, password):
+        self.open_home_page(wd)
         wd.find_element_by_name("user").click()
         wd.find_element_by_name("user").clear()
         wd.find_element_by_name("user").send_keys(username)
@@ -28,6 +29,7 @@ class TestAddGroups(unittest.TestCase):
         wd.find_element_by_link_text("groups").click()
 
     def create_group(self, wd, group):
+        self.open_groups_page(wd)
         # init group creation
         wd.find_element_by_name("new").click()
         # fill_group_forms(self, wd):
@@ -42,6 +44,7 @@ class TestAddGroups(unittest.TestCase):
         wd.find_element_by_name("group_footer").send_keys(group.footer)
         # submit_group_creation(self, wd):
         wd.find_element_by_name("submit").click()
+        self.return_to_groups_page(wd)
 
     def return_to_groups_page(self, wd):
         wd.find_element_by_link_text("group page").click()
@@ -51,20 +54,14 @@ class TestAddGroups(unittest.TestCase):
 
     def test_add_groups(self):
         wd = self.wd
-        self.open_home_page(wd)
         self.login(wd, username="admin", password="secret")
-        self.open_groups_page(wd)
         self.create_group(wd, Group(name="new_group", header="new_group", footer="new_group"))
-        self.return_to_groups_page(wd)
         self.logout(wd)
 
     def test_add_empty_groups(self):
         wd = self.wd
-        self.open_home_page(wd)
         self.login(wd, username="admin", password="secret")
-        self.open_groups_page(wd)
         self.create_group(wd, Group(name="", header="", footer=""))
-        self.return_to_groups_page(wd)
         self.logout(wd)
 
 
