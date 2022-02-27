@@ -5,6 +5,7 @@ from fixture.contact import ContactHelper
 
 
 
+
 class Application:
 
     def __init__(self):
@@ -13,6 +14,9 @@ class Application:
         self.session = SessionHelper(self)
         self.group = GroupHelper(self)
         self.contact = ContactHelper(self)
+        self.edit_contact = ContactHelper(self)
+        self.edit_group = GroupHelper(self)
+
 
 
     def open_home_page(self):

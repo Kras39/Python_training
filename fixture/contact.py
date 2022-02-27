@@ -5,6 +5,7 @@ class ContactHelper:
     def __init__(self, app):
         self.app = app
 
+# Create new conact
     def open_add_new(self):
         wd = self.app.wd
         wd.find_element_by_link_text("add new").click()
@@ -126,6 +127,42 @@ class ContactHelper:
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
         self.return_to_homepage()
 
+# Edit contact
+    def open_edit(self):
+        wd = self.app.wd
+        wd.find_element_by_xpath("//img[@alt='Edit']").click()
+        # wd.get("http://localhost/addressbook/edit.php?id=6")
+
+    def edit(self, edit_contact):
+        wd = self.app.wd
+        self.open_edit()
+         # change firstname
+        wd.find_element_by_name("firstname").click()
+        wd.find_element_by_name("firstname").click()
+        wd.find_element_by_name("firstname").click()
+        wd.find_element_by_name("firstname").clear()
+        wd.find_element_by_name("firstname").send_keys(edit_contact.firstname)
+        # change middlename
+        wd.find_element_by_name("middlename").click()
+        wd.find_element_by_name("middlename").click()
+        wd.find_element_by_name("middlename").click()
+        wd.find_element_by_name("middlename").clear()
+        wd.find_element_by_name("middlename").send_keys(edit_contact.middlename)
+        # change lastname
+        wd.find_element_by_name("lastname").click()
+        wd.find_element_by_name("lastname").click()
+        wd.find_element_by_name("lastname").click()
+        wd.find_element_by_name("lastname").clear()
+        wd.find_element_by_name("lastname").send_keys(edit_contact.lastname)
+        # change nikename
+        wd.find_element_by_name("nickname").click()
+        wd.find_element_by_name("nickname").click()
+        wd.find_element_by_name("nickname").clear()
+        wd.find_element_by_name("nickname").send_keys(edit_contact.nikename)
+        wd.find_element_by_name("update").click()
+        self.return_to_homepage()
+
+# Delete contact
     def delete_first_contact(self):
         wd = self.app.wd
         self.app.open_home_page()
@@ -135,7 +172,7 @@ class ContactHelper:
         wd.find_element_by_xpath("/html/body/div/div[4]/form[2]/div[2]/input").click()
         wd.switch_to.alert.accept()
 
-
+# Delete All contact
     def delete_all_contacts(self):
         wd = self.app.wd
         self.app.open_home_page()
