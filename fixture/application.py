@@ -16,6 +16,14 @@ class Application:
         self.contact = ContactHelper(self)
         self.edit_contact = ContactHelper(self)
         self.edit_group = GroupHelper(self)
+        self.modification_contact = ContactHelper(self)
+
+    def is_valid(self):
+        try:
+            self.wd.current_url
+            return True
+        except:
+            return False
 
 
 

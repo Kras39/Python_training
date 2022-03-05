@@ -1,4 +1,4 @@
-class EditContact:
+class EditFirstContact:
     def __init__(self, firstname, middlename, lastname, nikename):
         self.firstname = firstname
         self.middlename = middlename
