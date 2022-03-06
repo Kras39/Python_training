@@ -153,12 +153,6 @@ class ContactHelper:
         wd.find_element_by_name("update").click()
         self.return_to_homepage()
 
-# Edit contact
-    def open_edit_first_contact(self):
-        wd = self.app.wd
-        self.select_first_contact()
-        wd.find_element_by_xpath("//img[@alt='Edit']").click()
-
     def select_first_contact(self):
         wd = self.app.wd
         wd.find_element_by_name("selected[]").click()
