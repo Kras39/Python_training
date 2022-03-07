@@ -1,6 +1,6 @@
 from selenium.webdriver.support.select import Select
 
-class ContactHelper:
+class ContactHelper_v_1:
 
     def __init__(self, app):
         self.app = app
@@ -37,6 +37,16 @@ class ContactHelper:
         self.change_field_value("email2", contact.email2)
         self.change_field_value("email3", contact.email3)
         self.change_field_value("homepage", contact.homepage)
+        if not wd.find_element_by_xpath("/html/body/div/div[4]/form/select[1]//option[16]").is_selected():
+            wd.find_element_by_xpath("/html/body/div/div[4]/form/select[1]//option[5]").click()
+        if not wd.find_element_by_xpath("/html/body/div/div[4]/form/select[2]//option[8]").is_selected():
+            wd.find_element_by_xpath("/html/body/div/div[4]/form/select[2]//option[9]").click()
+        self.change_field_value("byear", contact.byear)
+        if not wd.find_element_by_xpath("/html/body/div/div[4]/form/select[3]//option[12]").is_selected():
+            wd.find_element_by_xpath("/html/body/div/div[4]/form/select[3]//option[7]").click()
+        if not wd.find_element_by_xpath("/html/body/div/div[4]/form/select[4]//option[9]").is_selected():
+            wd.find_element_by_xpath("/html/body/div/div[4]/form/select[4]//option[11]").click()
+        self.change_field_value("ayear", contact.ayear)
         self.change_field_value("address2", contact.address2)
         self.change_field_value("phone2", contact.phone2)
         self.change_field_value("notes", contact.notes)
@@ -47,6 +57,8 @@ class ContactHelper:
             wd.find_element_by_name(field_name).click()
             wd.find_element_by_name(field_name).clear()
             wd.find_element_by_name(field_name).send_keys(text)
+            # wd.find_element_by_name(field_name).select_by_visible_text()
+            # wd.find_element_by_name(field_name).send_keys(text)
 
 # Modify first contact
     def modify_first_contact(self, new_contact_data):
@@ -92,14 +104,3 @@ class ContactHelper:
         wd = self.app.wd
         self.open_add_new()
         return len(wd.find_elements_by_name("selected[]"))
-
-    def add_first_contact_to_group(self):
-        wd = self.app.wd
-        self.app.open_home_page()
-        self.select_first_contact()
-        wd.find_element_by_name("to_group").click()
-        # wd.find_element_by_xpath("/html/body/div/div[4]/form[2]/div[4]/select").click()
-        wd.find_element_by_xpath("/html/body/div/div[4]/form[2]/div[4]/select/option[1]").click()
-        wd.find_element_by_name("add").click()
-
-
