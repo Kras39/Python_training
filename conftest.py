@@ -22,5 +22,3 @@ def stop(request):
         fixture.destroy()
     request.addfinalizer(fin)
     return fixture
-
-# Добавить в дальнейшем в fixture (scope = "session")
