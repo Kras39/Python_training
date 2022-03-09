@@ -13,8 +13,8 @@ class Application:
         self.session = SessionHelper(self)
         self.group = GroupHelper(self)
         self.contact = ContactHelper(self)
-        # self.contact_v_1 = ContactHelper_v_1(self)
         self.edit_group = GroupHelper(self)
+      # self.contact_v_1 = ContactHelper_v_1(self)
 
     def is_valid(self):
         try:
