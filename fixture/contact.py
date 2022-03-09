@@ -15,7 +15,7 @@ class ContactHelper:
         wd = self.app.wd
         self.open_add_new()
         # fill in firstname
-        self.fill_contact_form(contact) 
+        self.fill_contact_form(contact)
         # submit_contact_creation
         wd.find_element_by_name("submit").click()
         self.return_to_homepage()
