@@ -15,3 +15,4 @@ def test_modify_group_footer(app):
         app.group.create(Group(footer="name_test"))
     app.group.modify_first_group(Group(footer="new_footer"))
 
+
