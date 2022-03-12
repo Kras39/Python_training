@@ -90,7 +90,7 @@ class ContactHelper:
 
     def count(self):
         wd = self.app.wd
-        self.open_add_new()
+        self.app.open_home_page()
         return len(wd.find_elements_by_name("selected[]"))
 
     def add_first_contact_to_group(self):
