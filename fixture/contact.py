@@ -1,11 +1,12 @@
 from selenium.webdriver.support.select import Select
 from model.contact import Contact
+
 class ContactHelper:
 
     def __init__(self, app):
         self.app = app
 
-# Create new conact
+# Create new contact
     def open_add_new(self):
         wd = self.app.wd
         if not (wd.current_url.endswith("/edit.php") and len(wd.find_elements_by_name("submit")) > 0):
@@ -49,8 +50,12 @@ class ContactHelper:
             wd.find_element_by_name(field_name).clear()
             wd.find_element_by_name(field_name).send_keys(text)
 
-    def modify_first_contact(self):
-        self.modify_contact_by_index(0)
+# Modify first contact
+
+    def modify_first_contact(self, new_contact_data):
+        self.modify_contact_by_index(0, new_contact_data)
+
+# Modify contact by index
 
     def modify_contact_by_index(self, index, new_contact_data):
         wd = self.app.wd
@@ -72,6 +77,8 @@ class ContactHelper:
         wd = self.app.wd
         wd.find_elements_by_name("selected[]")[index].click()
 
+# Delete first contact
+
     def delete_first_contact(self):
         self.delete_contact_by_index(0)
 
@@ -80,20 +87,24 @@ class ContactHelper:
         self.app.open_home_page()
         # select first contact
         self.select_contact_by_index(index)
+        wd.find_element_by_name("selected[]").click()
         # submit deletion
         wd.find_element_by_xpath("/html/body/div/div[4]/form[2]/div[2]/input").click()
         wd.switch_to.alert.accept()
         self.contact_cach = None
 
 # Delete All contact
-    def delete_all_contacts(self):
+
+    def delete_all_contacts(self, index):
         wd = self.app.wd
         self.app.open_home_page()
         # select all contact
+        self.select_contact_by_index(index)
         wd.find_element_by_xpath("// *[ @ id = 'MassCB']").click()
         # submit deletion
         wd.find_element_by_xpath("/html/body/div/div[4]/form[2]/div[2]/input").click()
         wd.switch_to.alert.accept()
+        self.contact_cach = None
 
     def return_to_homepage(self):
         wd = self.app.wd
@@ -119,7 +130,7 @@ class ContactHelper:
         if self.contact_cach is None:
             wd = self.app.wd
             self.app.open_home_page()
-            self.contact_cach=[]
+            self.contact_cach = []
             rows = wd.find_elements_by_xpath("/html/body/div/div[4]/form[2]/table/tbody/tr[@name='entry']")
             for elements in rows:
                 column = elements.find_elements_by_tag_name("td")
@@ -128,7 +139,3 @@ class ContactHelper:
                 id = elements.find_element_by_name("selected[]").get_attribute("value")
                 self.contact_cach.append(Contact(lastname=lastname, firstname=firstname, id=id))
         return list(self.contact_cach)
-
-
-
-
