@@ -87,8 +87,9 @@ class ContactHelper:
         wd = self.app.wd
         self.app.open_home_page()
         # select first contact
-        self.select_contact_by_index(index)
-        wd.find_element_by_name("selected[]").click()
+        # self.select_contact_by_index(index)
+        # wd.find_element_by_name("selected[]").click()
+        wd.find_elements_by_name("selected[]")[index].click()
         # submit deletion
         wd.find_element_by_xpath("/html/body/div/div[4]/form[2]/div[2]/input").click()
         wd.switch_to.alert.accept()
@@ -115,15 +116,6 @@ class ContactHelper:
         wd = self.app.wd
         self.app.open_home_page()
         return len(wd.find_elements_by_name("selected[]"))
-
-    def add_first_contact_to_group(self):
-        wd = self.app.wd
-        self.app.open_home_page()
-        self.select_first_contact()
-        wd.find_element_by_name("to_group").click()
-        # wd.find_element_by_xpath("/html/body/div/div[4]/form[2]/div[4]/select").click()
-        wd.find_element_by_xpath("/html/body/div/div[4]/form[2]/div[4]/select/option[1]").click()
-        wd.find_element_by_name("add").click()
 
     contact_cach = None
 
@@ -188,3 +180,11 @@ class ContactHelper:
         phone2 = re.search("P: (.*)", text).group(1)
         return Contact(home=home, mobile=mobile, work=work, phone2=phone2)
 
+    def add_first_contact_to_group(self):
+        wd = self.app.wd
+        self.app.open_home_page()
+        self.select_first_contact()
+        wd.find_element_by_name("to_group").click()
+        # wd.find_element_by_xpath("/html/body/div/div[4]/form[2]/div[4]/select").click()
+        wd.find_element_by_xpath("/html/body/div/div[4]/form[2]/div[4]/select/option[1]").click()
+        wd.find_element_by_name("add").click()

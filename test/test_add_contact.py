@@ -2,15 +2,16 @@ from model.contact import Contact
 import pytest
 import random
 import string
+import time
 
 
 def random_string(prefix, maxlen):
     symbols = string.ascii_letters + string.digits + string.punctuation + " "*10
     return prefix + "".join([random.choice(symbols) for i in range(random.randrange(maxlen))])
 
-testdata = [Contact(firstname="", middlename="", lastname="", nikename="", title="", company="", address="", home="",
-                    mobile="", work="", fax="", email="", email2="", email3="", homepage="", address2="", phone2="",
-                    notes="")] + [
+testdata = [Contact(firstname="Hall", middlename="", lastname="Graham", nikename="", title="", company="", address="",
+                    home="", mobile="", work="", fax="", email="", email2="", email3="", homepage="", address2="",
+                    phone2="", notes="")] + [
     Contact(firstname=random_string("firstname", 10), lastname=random_string("lastname", 10),
             title=random_string("title", 10), company=random_string("company", 10), address=random_string("address", 20),
             home=random_string("home", 7), mobile=random_string("mobile", 7), work=random_string("work", 5),
@@ -24,8 +25,10 @@ testdata = [Contact(firstname="", middlename="", lastname="", nikename="", title
 def test_add_contact(app, contact):
     old_contacts = app.contact.get_contact_list()
     app.contact.create(contact)
+    time.sleep (6)
     assert len(old_contacts) + 1 == app.contact.count()
     new_contacts = app.contact.get_contact_list()
     old_contacts.append(contact)
+    time.sleep(6)
     assert sorted(old_contacts, key=Contact.id_or_max) == sorted(new_contacts, key=Contact.id_or_max)
 
