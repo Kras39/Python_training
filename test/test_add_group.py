@@ -2,6 +2,7 @@ from model.group import Group
 import pytest
 import random
 import string
+import time
 
 def random_string(prefix, maxlen):
     symbols = string.ascii_letters + string.digits + string.punctuation +" "*10
@@ -16,9 +17,11 @@ testdata = [Group(name="", header="", footer="")] + [
 def test_add_group(app, group):
     old_groups = app.group.get_group_list()
     app.group.create(group)
+    time.sleep(4)
     assert len(old_groups) + 1 == app.group.count()
     new_groups = app.group.get_group_list()
     old_groups.append(group)
+    time.sleep(4)
     assert sorted(old_groups, key=Group.id_or_max) == sorted(new_groups, key=Group.id_or_max)
 
 
