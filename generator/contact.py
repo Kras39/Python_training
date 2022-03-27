@@ -21,6 +21,7 @@ constant = [
                     mobile="10",
                     work="11",
                     fax="12",
+                    email="16",
                     email2="14",
                     email3="15",
                     homepage="16",
@@ -55,8 +56,9 @@ def random_phone(prefix,maxlen):
 def random_email(prefix,maxlen):
     symbols =  string.ascii_letters + string.digits
     domen=string.ascii_lowercase
-    return prefix + ("".join([random.choice(symbols) for i in range (random.randrange(maxlen//2))]))+"@"+\
-           ("".join([random.choice(symbols) for i in range (random.randrange(maxlen//2))]))+"."+\
+    return prefix + ("".join([random.choice(symbols) for i in range (random.randrange(maxlen//2))]))+ "_" +\
+           ("".join([random.choice(symbols) for i in range (random.randrange(maxlen//2))])) + "@" +\
+           ("".join([random.choice(symbols) for i in range (random.randrange(maxlen//2))])) + "." +\
             ("".join([random.choice(domen) for i in range (random.randint(2, 3))]))
 
 testdata = [Contact(firstname=random_string("firstname" , 10),
@@ -70,6 +72,7 @@ testdata = [Contact(firstname=random_string("firstname" , 10),
                      mobile=random_phone("" , 10),
                      work=random_phone("" , 10),
                      fax=random_phone("" , 10),
+                     email=random_email("email", 15),
                      email2=random_email("email2" , 15),
                      email3=random_email("email3" , 15),
                      homepage=random_string("homepage" , 10),
