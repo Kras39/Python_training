@@ -56,7 +56,8 @@ def random_phone(prefix,maxlen):
 def random_email(prefix,maxlen):
     symbols =  string.ascii_letters + string.digits
     domen=string.ascii_lowercase
-    return prefix + ("".join([random.choice(symbols) for i in range (random.randrange(maxlen//2))]))+ "_" +\
+    return prefix + ("".join([random.choice(symbols) for i in range (random.randrange(maxlen//2))]))+ "-" +\
+           ("".join([random.choice(symbols) for i in range (random.randrange(maxlen//2))])) + "_" +\
            ("".join([random.choice(symbols) for i in range (random.randrange(maxlen//2))])) + "@" +\
            ("".join([random.choice(symbols) for i in range (random.randrange(maxlen//2))])) + "." +\
             ("".join([random.choice(domen) for i in range (random.randint(2, 3))]))
