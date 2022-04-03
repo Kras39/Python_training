@@ -18,5 +18,3 @@ def test_add_empty_group(app, json_groups):
     new_groups = app.group.get_group_list()
     old_groups.append(group)
     assert sorted(old_groups, key=Group.id_or_max) == sorted(new_groups, key=Group.id_or_max)
-
-

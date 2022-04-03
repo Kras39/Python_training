@@ -1,4 +1,3 @@
-from selenium.webdriver.support.select import Select
 from model.contact import Contact
 import re
 
@@ -70,13 +69,28 @@ class ContactHelper:
         self.return_to_homepage()
         self.contact_cach = None
 
-    def select_first_contact(self):
+    def modify_contact_by_id(self, id, new_contact_data):
         wd = self.app.wd
-        wd.find_element_by_name("selected[]").click()
+        self.select_contact_by_id(id)
+        # open modification form
+        wd.find_element_by_xpath("//a[@href='edit.php?id=%s']/img" % id).click()
+        # fill contact form
+        self.fill_contact_form(new_contact_data)
+        # submit modification
+        wd.find_element_by_xpath("//div[@id='content']/form[1]/input[22]").click()
+        self.return_to_homepage()
+        self.contact_cach = None
+
+    def select_first_contact(self):
+        self.select_contact_by_index(0)
 
     def select_contact_by_index(self, index):
         wd = self.app.wd
         wd.find_elements_by_name("selected[]")[index].click()
+
+    def select_contact_by_id(self, id):
+        wd = self.app.wd
+        wd.find_element_by_css_selector("input[value='%s']" % id).click()
 
 # Delete first contact
 
@@ -85,11 +99,15 @@ class ContactHelper:
 
     def delete_contact_by_index(self, index):
         wd = self.app.wd
-        self.app.open_home_page()
-        # select first contact
-        # self.select_contact_by_index(index)
-        # wd.find_element_by_name("selected[]").click()
-        wd.find_elements_by_name("selected[]")[index].click()
+        self.select_contact_by_index(index)
+        # submit deletion
+        wd.find_element_by_xpath("/html/body/div/div[4]/form[2]/div[2]/input").click()
+        wd.switch_to.alert.accept()
+        self.contact_cach = None
+
+    def delete_contact_by_id(self, id):
+        wd = self.app.wd
+        self.select_contact_by_id(id)
         # submit deletion
         wd.find_element_by_xpath("/html/body/div/div[4]/form[2]/div[2]/input").click()
         wd.switch_to.alert.accept()
@@ -99,8 +117,6 @@ class ContactHelper:
 
     def delete_all_contacts(self, index):
         wd = self.app.wd
-        self.app.open_home_page()
-        # select all contact
         self.select_contact_by_index(index)
         wd.find_element_by_xpath("// *[ @ id = 'MassCB']").click()
         # submit deletion
