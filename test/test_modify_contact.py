@@ -14,6 +14,7 @@ def test_modify_random_contact(app, json_contact):
     old_contacts[index] = contact
     assert sorted(old_contacts, key=Contact.id_or_max) == sorted(new_contacts, key=Contact.id_or_max)
 
+
 def test_modify_contact_db(app, db, json_contact, check_ui):
     if len(db.get_contact_list()) == 0:
         app.contact.create(Contact(firstname="Test"))
