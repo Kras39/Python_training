@@ -47,3 +47,13 @@ def merge_phones_like_on_home_page(contact):
 def merge_emails_like_on_home_page(contact):
     return "\n".join(filter(lambda x: x != "",
                             filter(lambda x: x is not None, [contact.email, contact.email2, contact.email3])))
+
+# Трансформация тестов для проверки информации о контактах на главной странице. Реализация сравнения для всех записей,
+# а не для одной случайно выбранной. Сравнение с информацией, загруженной из базы данных.
+
+def test_assert_contact_info_home_and_db_for_all_contact(app, db):
+    contact_from_home_page = app.contact.get_contact_list()
+    contact_from_db = db.get_contact_list()
+    web = sorted(contact_from_home_page, key=Contact.id_or_max)
+    db = sorted(contact_from_db, key=Contact.id_or_max)
+    assert web == db
