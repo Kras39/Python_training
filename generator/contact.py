@@ -10,13 +10,13 @@ import sys
 now_time = datetime.datetime.now()
 
 constant = [
-            Contact(firstname="1",
-                    middlename="2",
+            Contact(firstname="test_customer",
+                    middlename="test_customer",
                     lastname=("lastname_" + str(now_time)),
-                    nickename="4",
+                    nickname="TC",
                     title="6",
-                    company="7",
-                    address="8",
+                    company="best_company",
+                    address="here",
                     home="9",
                     mobile="10",
                     work="11",
@@ -65,7 +65,7 @@ def random_email(prefix,maxlen):
 testdata = [Contact(firstname=random_string("firstname" , 10),
                      middlename=random_string("middlename" , 10),
                      lastname=random_string("lastname" , 10),
-                     nickename=random_string("nickname" , 10),
+                     nickname=random_string("nickname" , 10),
                      title=random_string("firstname" , 10),
                      company=random_string("firstname" , 10),
                      address=random_string("firstname" , 10),
