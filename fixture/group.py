@@ -117,3 +117,8 @@ class GroupHelper:
                 id = element.find_element_by_name("selected[]").get_attribute("value")
                 self.group_cach.append(Group(name=text, id=id))
         return list(self.group_cach)
+
+    def create_group_if_it_not_exist(self, group):
+        wd = self.app.wd
+        if self.count() == 0:
+            self.create(group)

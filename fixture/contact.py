@@ -339,5 +339,41 @@ class ContactHelper:
                        mobile=contact.mobile.strip(), work=contact.work.strip(),
                        phone2=contact.phone2.strip(), email=contact.email, email2=contact.email2, email3=contact.email3)
 
+    def create_contact_if_it_not_exist(self, contact):
+        wd = self.app.wd
+        if self.count() == 0:
+            self.create(contact)
+
+    def add_contact_in_group(self, contact_id, group_id):
+        wd = self.app.wd
+        self.app.open_home_page()
+        self.select_contact_by_id(contact_id)
+        self.select_group_by_id_for_add_contact(group_id)
+        # submit adding
+        wd.find_element_by_css_selector("[value='Add to']").click()
+        self.back_to_group_page()
+        self.contact_cache = None
+
+    def select_group_by_id_for_add_contact(self, id):
+        wd = self.app.wd
+        Select(wd.find_element_by_name("to_group")).select_by_value(id)
+
+    def back_to_group_page(self):
+        wd = self.app.wd
+        wd.find_element_by_xpath('//a[contains(text(), "group page ")]').click()
+
+    def delete_contact_from_group(self, contact_id, group_id):
+        wd = self.app.wd
+        self.app.open_home_page()
+        self.select_group_by_id_for_delete_contact(group_id)
+        self.select_contact_by_id(contact_id)
+        # submit adding
+        wd.find_element_by_name("remove").click()
+        self.back_to_group_page()
+        self.contact_cache = None
+
+    def select_group_by_id_for_delete_contact(self, id):
+        wd = self.app.wd
+        Select(wd.find_element_by_name("group")).select_by_value(id)
 
 
