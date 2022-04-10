@@ -50,8 +50,8 @@ def random_string(prefix,maxlen):
     return prefix + "".join([random.choice(symbols) for i in range (random.randrange(maxlen))])
 
 def random_phone(prefix,maxlen):
-    symbols = string.digits + "(" + ")" + "-"
-    return prefix + "".join([random.choice(symbols) for i in range (random.randrange(maxlen))])
+    symbols = string.digits + "("+")" + "-"
+    return prefix + ("".join([random.choice(symbols) for i in range (random.randrange(maxlen))]))
 
 def random_email(prefix,maxlen):
     symbols =  string.ascii_letters + string.digits
