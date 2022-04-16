@@ -376,4 +376,11 @@ class ContactHelper:
         wd = self.app.wd
         Select(wd.find_element_by_name("group")).select_by_value(id)
 
+    def add_to_group(self, contact, group):
+        wd = self.app.wd
+        self.app.open_home_page()
+        self.select_contact_by_id(contact.id)
+        select = Select(wd.find_element_by_name("to_group"))
+        select.select_by_visible_text(group.name.strip())
+        wd.find_element_by_name("add").click()
 
