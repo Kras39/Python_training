@@ -271,13 +271,14 @@ class ContactHelper:
         phone2 = re.search("P: (.*)", text).group(1)
         return Contact(home=home, mobile=mobile, work=work, phone2=phone2)
 
-    def add_first_contact_to_group(self):
+    def add_contact_to_group(self, contact_id):
         wd = self.app.wd
         self.app.open_home_page()
-        self.modify_contact_by_id()
+        self.select_contact_by_id(contact_id)
         wd.find_element_by_name("to_group").click()
-        wd.find_element_by_xpath("/html/body/div/div[4]/form[2]/div[4]/select/option[1]").click()
+        # wd.find_element_by_xpath("/html/body/div/div[4]/form[2]/div[4]/select/option[1]").click()
         wd.find_element_by_name("add").click()
+        self.contact_cache = None
 
     def create_in_group(self, contact, group_name):
         wd = self.app.wd
