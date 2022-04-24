@@ -310,10 +310,10 @@ class ContactHelper:
         else:
             return len(wd.find_elements_by_name("selected[]"))
 
-    def add_contact_to_group(self, contact, group_number):
+    def add_contact_to_group(self, contact_id, group_number):
         wd = self.app.wd
         self.app.open_home_page()
-        self.select_contact_by_id(contact.id)
+        self.select_contact_by_id(contact_id)
         # rand_number = randrange(int((lambda x: (x-2)/2)(len(wd.find_elements_by_tag_name("option")))))
         self.select_group_by_rand_number(group_number, "addition")
         wd.find_element_by_name("add").click()
@@ -352,12 +352,14 @@ class ContactHelper:
         self.select_group_by_id_for_add_contact(group_id)
         # submit adding
         wd.find_element_by_css_selector("[value='Add to']").click()
-        self.back_to_group_page()
+        # self.back_to_group_page()
+        self.app.open_home_page()
         self.contact_cache = None
 
-    def select_group_by_id_for_add_contact(self, id):
+    def select_group_by_id_for_add_contact(self, group_id):
         wd = self.app.wd
-        Select(wd.find_element_by_name("to_group")).select_by_value(id)
+        wd.find_element_by_name("group").click()
+        Select(wd.find_element_by_name("group")).select_by_value(group_id)
 
     def back_to_group_page(self):
         wd = self.app.wd
@@ -384,4 +386,9 @@ class ContactHelper:
         select = Select(wd.find_element_by_name("to_group"))
         select.select_by_visible_text(group.name.strip())
         wd.find_element_by_name("add").click()
+
+    def del_all_contacts_in_group(self):
+        wd = self.app.wd
+        wd.find_element_by_css_selector("input[id='MassCB']").click()
+        wd.find_element_by_name("remove").click()
 

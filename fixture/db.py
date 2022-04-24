@@ -55,6 +55,24 @@ class DbFixture:
         return list
 
 
+
+    def get_contact_list_without_groups(self):
+        list = []
+        cursor = self.connection.cursor()
+        try:
+            cursor.execute(
+                "select id, firstname, lastname, address, home, mobile, work, phone2, email, email2, email3 from addressbook where deprecated ='0000-00-00 00:00:00' and id not in (select id from address_in_groups)")
+            for row in cursor:
+                (id, firstname, lastname, address, home, mobile, work, phone2, email, email2, email3) = row
+                list.append(
+                    Contact(id=str(id), firstname=firstname, lastname=lastname, address=address, home=home,
+                            mobile=mobile, work=work, phone2=phone2, email=email, email2=email2, email3=email3))
+        finally:
+            cursor.close()
+        return list
+
+
+
     def get_group_id_with_contacts(self):
         list = []
         cursor = self.connection.cursor()

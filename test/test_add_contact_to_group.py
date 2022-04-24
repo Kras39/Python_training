@@ -1,7 +1,9 @@
-from random import *
 import random
 from model.contact import Contact
 from model.group import Group
+from fixture.orm import ORMFixture
+
+dbORM = ORMFixture(host="127.0.0.1", name="addressbook", user="root", password="")
 
 def test_add_contact_to_group(app, db):
     groups = db.get_group_list()
@@ -31,7 +33,23 @@ def check_free_contact(groups, db):
     return free_contacts
 
 
-    # contacts = db.get_contact_list()
-    # contact = choice(contacts)
-    # group_number = randrange(len(db.get_group_list()))
-    # app.contact.add_contact_to_group(contact.id, group_number)
+def test_added_cont_to_group(app, db):
+    if len(db.get_group_list()) == 0:
+        app.group.create(Group(name='test'))
+    if len(db.get_contact_list()) == 0:
+        app.contact.create(Contact(firstname="First Contact"))
+    if len(db.get_contact_list_without_groups()) == 0:
+        app.contact.create(Contact(firstname="First Contact"))
+    groups = db.get_group_list()
+    for group in groups:
+        app.contact.select_group_by_id_for_add_contact(group.id)
+        app.contact.del_all_contacts_in_group()
+        app.open_home_page()
+    group_for_adding = random.choice(db.get_group_list()).id
+    contacts_in_group_before = dbORM.get_contacts_in_group(Group(id=group_for_adding))
+    contact_not_in_group = random.choice(dbORM.get_contacts_not_in_group(Group(id=group_for_adding)))
+    app.contact.add_contact_in_group(contact_not_in_group.id, group_for_adding)
+    contacts_in_group_after = dbORM.get_contacts_in_group(Group(id=group_for_adding))
+    assert len(contacts_in_group_after) == len(contacts_in_group_before) + 1
+    contacts_in_group_before.append(contact_not_in_group)
+    assert sorted(contacts_in_group_before, key=Contact.id_or_max) == sorted(contacts_in_group_after, key=Contact.id_or_max)
