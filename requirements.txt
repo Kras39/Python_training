@@ -3,8 +3,5 @@ pytest_bdd
 selenium
 jsonpickle
 pony
-PyMySQL
-ftputil
+pymysql
 mysql-connector-python-rf
-suds
-wsproto
