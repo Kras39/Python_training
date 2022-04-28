@@ -282,15 +282,15 @@ class ContactHelper:
 
     def create_in_group(self, contact, group_name):
         wd = self.app.wd
-        self.open_home_page()
-        self.fill_contact_form_for_group(contact, group_name)
+        self.app.open_home_page()
+        self.app.fill_contact_form_for_group(contact, group_name)
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
         self.app.open_home_page()
         self.contact_cache = None
 
     def replace_in_group(self, group_name):
         wd = self.app.wd
-        self.open_home_page()
+        self.app.open_home_page()
         self.fill_contact_form_for_replace_in_group(group_name)
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
         self.app.open_home_page()
@@ -298,7 +298,7 @@ class ContactHelper:
 
     def remove_contact_from_group(self, id, group_number):
         wd = self.app.wd
-        self.open_home_page()
+        self.app.open_home_page()
         self.select_group_by_rand_number(group_number, "remove")
         self.check_add_contact()
         x = 1 + 3
@@ -355,6 +355,27 @@ class ContactHelper:
         # self.back_to_group_page()
         self.app.open_home_page()
         self.contact_cache = None
+
+    def add_contact_to_some_group(self, contact_id, group_id):
+        wd = self.app.wd
+        self.app.open_home_page()
+        self.select_contact_by_id(contact_id)
+        wd.find_element_by_name("to_group").click()
+        Select(wd.find_element_by_name("to_group")).select_by_value(group_id)
+        wd.find_element_by_name("add").click()
+        self.app.open_home_page()
+        self.contact_cache = None
+
+    def delete_contact_from_some_group(self, contact_id, group_id):
+        wd = self.app.wd
+        self.app.open_home_page()
+        Select(wd.find_element_by_name("group")).select_by_value(group_id)
+        self.select_contact_by_id(contact_id)
+        wd.find_element_by_name("remove").click()
+        self.app.open_home_page()
+        self.contact_cache = None
+
+
 
     def select_group_by_id_for_add_contact(self, group_id):
         wd = self.app.wd
