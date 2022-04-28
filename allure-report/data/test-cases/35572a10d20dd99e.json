@@ -1,0 +1,114 @@
+{
+  "uid" : "35572a10d20dd99e",
+  "name" : "test_add_empty_contact[None:firstnameS9:lastnameGASCBc]",
+  "fullName" : "test.test_add_contact#test_add_empty_contact",
+  "historyId" : "b73f3a229eea37e069a2ccd774a2a92a",
+  "time" : {
+    "start" : 1651093064312,
+    "stop" : 1651093076766,
+    "duration" : 12454
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 1,
+  "retriesStatusChange" : true,
+  "beforeStages" : [ {
+    "name" : "stop",
+    "time" : {
+      "start" : 1651093005795,
+      "stop" : 1651093005795,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "app",
+    "time" : {
+      "start" : 1651093063977,
+      "stop" : 1651093064311,
+      "duration" : 334
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  } ],
+  "afterStages" : [ {
+    "name" : "stop::fin",
+    "time" : {
+      "start" : 1651093113093,
+      "stop" : 1651093116400,
+      "duration" : 3307
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "test"
+  }, {
+    "name" : "suite",
+    "value" : "test_add_contact"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-AFDT43T"
+  }, {
+    "name" : "thread",
+    "value" : "10096-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test.test_add_contact"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "json_contact",
+    "value" : "None:firstnameS9:lastnameGASCBc"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "bca2896c8ea98fe6",
+      "status" : "broken",
+      "statusDetails" : "selenium.common.exceptions.WebDriverException: Message: Process unexpectedly closed with status 0",
+      "time" : {
+        "start" : 1651092953166,
+        "stop" : 1651092953166,
+        "duration" : 0
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "35572a10d20dd99e.json",
+  "parameterValues" : [ "None:firstnameS9:lastnameGASCBc" ]
+}

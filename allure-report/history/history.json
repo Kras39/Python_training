@@ -1,0 +1,387 @@
+{
+  "82933cb9758b045cde89a99208f49901" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "a16c258b806dddf6",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651093098957,
+        "stop" : 1651093105630,
+        "duration" : 6673
+      }
+    } ]
+  },
+  "2f8a0fa6748f7f231c79571451a02a9c" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "75df92e62c02d146",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651093084381,
+        "stop" : 1651093091213,
+        "duration" : 6832
+      }
+    } ]
+  },
+  "f11326f5354ccdb82724e5e74e65a62d" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "26034653fddd163",
+      "status" : "broken",
+      "statusDetails" : "AttributeError: module pytest has no attribute allure",
+      "time" : {
+        "start" : 1651170204274,
+        "stop" : 1651170204274,
+        "duration" : 0
+      }
+    } ]
+  },
+  "8c5191b5f4320811cdafd74c0d9ac7f9" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "88d9385b65287e7e",
+      "status" : "broken",
+      "statusDetails" : "AttributeError: module pytest has no attribute allure",
+      "time" : {
+        "start" : 1651170204225,
+        "stop" : 1651170204226,
+        "duration" : 1
+      }
+    } ]
+  },
+  "b9dd76fb6d2becb4ad1b33d538a468fb" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "caada074ed08d188",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651093017013,
+        "stop" : 1651093027239,
+        "duration" : 10226
+      }
+    } ]
+  },
+  "813db82dd4820a353abe3ecc64adc6c9" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "bd2e7d27c55fa660",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651170180849,
+        "stop" : 1651170189488,
+        "duration" : 8639
+      }
+    } ]
+  },
+  "df7ead19add30100b7e255f0157a24c3" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "31a60ebf5e4cdaeb",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651093106221,
+        "stop" : 1651093113077,
+        "duration" : 6856
+      }
+    } ]
+  },
+  "0324e0a713b4785f99837365f35beafb" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "9bbd3a4c8cb45913",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651093045871,
+        "stop" : 1651093054751,
+        "duration" : 8880
+      }
+    } ]
+  },
+  "f870920e3150b4849cf4caee9d03f31c" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "8ff649d7ed6c7fb",
+      "status" : "broken",
+      "statusDetails" : "selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=connectionFailure&u=http%3A//localhost/addressbook/&c=UTF-8&d=Firefox%20%D0%BD%D0%B5%20%D0%BC%D0%BE%D0%B6%D0%B5%D1%82%20%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C%20%D1%81%D0%BE%D0%B5%D0%B4%D0%B8%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%20%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%BE%D0%BC%20localhost.\nStacktrace:\nWebDriverError@chrome://remote/content/shared/webdriver/Errors.jsm:183:5\nUnknownError@chrome://remote/content/shared/webdriver/Errors.jsm:510:5\ncheckReadyState@chrome://remote/content/marionette/navigate.js:64:24\nonNavigation@chrome://remote/content/marionette/navigate.js:312:39\nemit@resource://gre/modules/EventEmitter.jsm:160:20\nreceiveMessage@chrome://remote/content/marionette/actors/MarionetteEventsParent.jsm:44:25",
+      "time" : {
+        "start" : 1651092916656,
+        "stop" : 1651092916656,
+        "duration" : 0
+      }
+    } ]
+  },
+  "1e6720d731872828d49fd13f72c89fc3" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "5c4f69515f69888e",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651093036667,
+        "stop" : 1651093045550,
+        "duration" : 8883
+      }
+    } ]
+  },
+  "f9681628ad4e852d8c80897f35a772a7" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "e115a762972baedb",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651093055052,
+        "stop" : 1651093063971,
+        "duration" : 8919
+      }
+    } ]
+  },
+  "4c37e0a1582335d72e919fbff534254a" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "8d1945f556542639",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651170189544,
+        "stop" : 1651170194334,
+        "duration" : 4790
+      }
+    } ]
+  },
+  "60573279a2cec65c651dc3febed967f6" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "9eaf48bdb2ec14f3",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651170199191,
+        "stop" : 1651170203822,
+        "duration" : 4631
+      }
+    } ]
+  },
+  "d1b52a20e8d66feebfd453a1fc9c9e63" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "810f7d8a140e79e9",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651093027502,
+        "stop" : 1651093036395,
+        "duration" : 8893
+      }
+    } ]
+  },
+  "a780aa24561abedd97506a34d7dfd92d" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "a5b86ef886e58078",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651170194378,
+        "stop" : 1651170199151,
+        "duration" : 4773
+      }
+    } ]
+  },
+  "ed7254efd60d7a6b2b7c6734cad4e50c" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "b2cbdbd4d2f78b09",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651093077101,
+        "stop" : 1651093083910,
+        "duration" : 6809
+      }
+    } ]
+  },
+  "0b4d761bd6ef957a1a857ed368173f31" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "dd0a1d64b0034ae9",
+      "status" : "broken",
+      "statusDetails" : "AttributeError: module pytest has no attribute allure",
+      "time" : {
+        "start" : 1651170203864,
+        "stop" : 1651170203864,
+        "duration" : 0
+      }
+    } ]
+  },
+  "7a21acf2f73d4e2a5e9a5a1034f22625" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "b80f042f91c1c73",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651093091727,
+        "stop" : 1651093098445,
+        "duration" : 6718
+      }
+    } ]
+  },
+  "6e04cd32d904686fd33f40a836c00337" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "baae7032d24d57d",
+      "status" : "broken",
+      "statusDetails" : "AttributeError: module pytest has no attribute allure",
+      "time" : {
+        "start" : 1651170204174,
+        "stop" : 1651170204175,
+        "duration" : 1
+      }
+    } ]
+  },
+  "b73f3a229eea37e069a2ccd774a2a92a" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "35572a10d20dd99e",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651093064312,
+        "stop" : 1651093076766,
+        "duration" : 12454
+      }
+    } ]
+  }
+}

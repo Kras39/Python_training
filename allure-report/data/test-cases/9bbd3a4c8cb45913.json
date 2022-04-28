@@ -1,0 +1,114 @@
+{
+  "uid" : "9bbd3a4c8cb45913",
+  "name" : "test_add_empty_contact[None:firstname83:lastnameeGcEzMwD]",
+  "fullName" : "test.test_add_contact#test_add_empty_contact",
+  "historyId" : "0324e0a713b4785f99837365f35beafb",
+  "time" : {
+    "start" : 1651093045871,
+    "stop" : 1651093054751,
+    "duration" : 8880
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 1,
+  "retriesStatusChange" : true,
+  "beforeStages" : [ {
+    "name" : "stop",
+    "time" : {
+      "start" : 1651093005795,
+      "stop" : 1651093005795,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "app",
+    "time" : {
+      "start" : 1651093045557,
+      "stop" : 1651093045870,
+      "duration" : 313
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  } ],
+  "afterStages" : [ {
+    "name" : "stop::fin",
+    "time" : {
+      "start" : 1651093113093,
+      "stop" : 1651093116400,
+      "duration" : 3307
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "test"
+  }, {
+    "name" : "suite",
+    "value" : "test_add_contact"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-AFDT43T"
+  }, {
+    "name" : "thread",
+    "value" : "10096-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test.test_add_contact"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "json_contact",
+    "value" : "None:firstname83:lastnameeGcEzMwD"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "b79a752c6db7a324",
+      "status" : "broken",
+      "statusDetails" : "selenium.common.exceptions.NoSuchWindowException: Message: Browsing context has been discarded\nStacktrace:\nWebDriverError@chrome://remote/content/shared/webdriver/Errors.jsm:183:5\nNoSuchWindowError@chrome://remote/content/shared/webdriver/Errors.jsm:437:5\nassert.that/<@chrome://remote/content/shared/webdriver/Assert.jsm:435:13\nassert.open@chrome://remote/content/shared/webdriver/Assert.jsm:143:4\nGeckoDriver.prototype.findElement@chrome://remote/content/marionette/driver.js:1379:10\ndespatch@chrome://remote/content/marionette/server.js:306:40\nexecute@chrome://remote/content/marionette/server.js:279:16\nonPacket/<@chrome://remote/content/marionette/server.js:252:20\nonPacket@chrome://remote/content/marionette/server.js:253:9\n_onJSONObjectReady/<@chrome://remote/content/marionette/transport.js:500:20",
+      "time" : {
+        "start" : 1651092937477,
+        "stop" : 1651092937477,
+        "duration" : 0
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "9bbd3a4c8cb45913.json",
+  "parameterValues" : [ "None:firstname83:lastnameeGcEzMwD" ]
+}
