@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.9.10 on win32)" generated="20220429 22:36:22.135" rpa="false" schemaversion="3">
+<suite id="s1" name="Groups Scenarious" source="C:\Users\Admin\PycharmProjects\Python_training\rf\groups_scenarious.robot">
+<kw name="Init Fixtures" type="SETUP">
+<msg timestamp="20220429 22:36:22.239" level="FAIL">No keyword with name 'Init Fixtures' found.</msg>
+<status status="FAIL" starttime="20220429 22:36:22.239" endtime="20220429 22:36:22.239"/>
+</kw>
+<test id="s1-t1" name="Add new group" line="9">
+<status status="FAIL" starttime="20220429 22:36:22.239" endtime="20220429 22:36:22.241">Parent suite setup failed:
+No keyword with name 'Init Fixtures' found.</status>
+</test>
+<kw name="Destroy Fixtures" type="TEARDOWN">
+<msg timestamp="20220429 22:36:22.249" level="FAIL">No keyword with name 'Destroy Fixtures' found.</msg>
+<status status="FAIL" starttime="20220429 22:36:22.249" endtime="20220429 22:36:22.249">No keyword with name 'Destroy Fixtures' found.</status>
+</kw>
+<status status="FAIL" starttime="20220429 22:36:22.138" endtime="20220429 22:36:22.249">Suite setup failed:
+No keyword with name 'Init Fixtures' found.
+
+Also suite teardown failed:
+No keyword with name 'Destroy Fixtures' found.</status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Groups Scenarious">Groups Scenarious</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220429 22:36:22.223" level="ERROR">Error in file 'C:\Users\Admin\PycharmProjects\Python_training\rf\groups_scenarious.robot' on line 3: Importing library 'rf.AddressBook' failed: Module 'rf' does not contain 'AddressBook'.</msg>
+</errors>
+</robot>

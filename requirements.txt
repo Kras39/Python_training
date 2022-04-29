@@ -1,4 +1,5 @@
 pytest
+pip
 pytest_bdd
 selenium
 jsonpickle
@@ -7,3 +8,4 @@ pymysql
 mysql-connector-python-rf
 allure-pytest
 lxml-4.8.0-cp39-cp39-win_amd64.whl
+robotframework-python3
